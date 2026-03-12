@@ -12,39 +12,131 @@
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav class="nav" id="nav">
-    <div class="nav__container">
-      <a href="#" class="nav__logo">
-        <span class="nav__logo-icon">&#9671;</span> Travanix Labs
-      </a>
-      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav__links" id="navLinks">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact" class="nav__cta">Get in Touch</a></li>
-      </ul>
-    </div>
+  <!-- Sidebar Navigation -->
+  <nav class="sidebar" id="sidebar">
+    <a href="#" class="sidebar__logo">
+      <span class="sidebar__logo-icon">&#9671;</span>
+      <span class="sidebar__logo-text">Travanix Labs</span>
+    </a>
+    <ul class="sidebar__links" id="sidebarLinks">
+      <li>
+        <a href="#home" class="sidebar__link sidebar__link--active">
+          <svg class="sidebar__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span class="sidebar__label">Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="#services" class="sidebar__link">
+          <svg class="sidebar__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          <span class="sidebar__label">Services</span>
+        </a>
+      </li>
+      <li>
+        <a href="#work" class="sidebar__link">
+          <svg class="sidebar__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          <span class="sidebar__label">Work</span>
+        </a>
+      </li>
+      <li>
+        <a href="#about" class="sidebar__link">
+          <svg class="sidebar__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span class="sidebar__label">About</span>
+        </a>
+      </li>
+      <li>
+        <a href="#contact" class="sidebar__link">
+          <svg class="sidebar__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+          <span class="sidebar__label">Contact</span>
+        </a>
+      </li>
+    </ul>
   </nav>
 
-  <!-- Hero -->
-  <section class="hero" id="hero">
+  <!-- Mobile top bar -->
+  <div class="mobile-topbar" id="mobileTopbar">
+    <a href="#" class="mobile-topbar__logo">
+      <span class="nav__logo-icon">&#9671;</span> Travanix Labs
+    </a>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <!-- Mobile slide-out menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul class="mobile-menu__links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Home -->
+  <section class="home" id="home">
     <canvas id="particleCanvas"></canvas>
-    <div class="hero__content">
-      <p class="hero__tag">Freelance Software Development</p>
-      <h1 class="hero__title">We build digital<br>products that <span class="gradient-text">perform</span>.</h1>
-      <p class="hero__subtitle">Clean code. Modern design. Shipped on time.</p>
-      <div class="hero__actions">
-        <a href="#contact" class="btn btn--primary">Start a Project</a>
-        <a href="#work" class="btn btn--outline">View Our Work</a>
+    <div class="home__content">
+      <p class="home__tag">Freelance Website Development</p>
+      <h1 class="home__title">Building<br>solutions that <span class="gradient-text">perform</span>.</h1>
+      <p class="home__subtitle">Clean code. Modern design. Shipped on time.</p>
+      <div class="home__actions">
+        <a href="#contact" class="btn btn--primary">Contact Us</a>
       </div>
     </div>
-    <div class="hero__scroll">
+    <!-- Floating HUD elements -->
+    <div class="hud-float hud-float--1" data-speed="0.3">
+      <svg width="60" height="60" viewBox="0 0 60 60" fill="none" stroke="rgba(0,229,255,0.15)" stroke-width="1">
+        <rect x="5" y="5" width="50" height="50" rx="2"/>
+        <line x1="5" y1="20" x2="55" y2="20"/>
+        <circle cx="15" cy="12" r="3" fill="rgba(0,229,255,0.2)" stroke="none"/>
+      </svg>
+    </div>
+    <div class="hud-float hud-float--2" data-speed="0.5">
+      <svg width="80" height="80" viewBox="0 0 80 80" fill="none" stroke="rgba(240,160,48,0.12)" stroke-width="1">
+        <polygon points="40,5 75,40 40,75 5,40"/>
+        <polygon points="40,20 60,40 40,60 20,40"/>
+      </svg>
+    </div>
+    <div class="hud-float hud-float--3" data-speed="0.2">
+      <svg width="100" height="40" viewBox="0 0 100 40" fill="none" stroke="rgba(0,229,255,0.1)" stroke-width="1">
+        <rect x="1" y="1" width="98" height="38" rx="2"/>
+        <line x1="10" y1="14" x2="50" y2="14" stroke="rgba(0,229,255,0.2)"/>
+        <line x1="10" y1="22" x2="70" y2="22" stroke="rgba(0,229,255,0.15)"/>
+        <line x1="10" y1="30" x2="40" y2="30" stroke="rgba(0,229,255,0.1)"/>
+      </svg>
+    </div>
+    <div class="hud-float hud-float--4" data-speed="0.6">
+      <svg width="50" height="50" viewBox="0 0 50 50" fill="none" stroke="rgba(45,212,191,0.15)" stroke-width="1">
+        <circle cx="25" cy="25" r="22"/>
+        <circle cx="25" cy="25" r="12"/>
+        <line x1="25" y1="3" x2="25" y2="15"/>
+        <line x1="25" y1="35" x2="25" y2="47"/>
+        <line x1="3" y1="25" x2="15" y2="25"/>
+        <line x1="35" y1="25" x2="47" y2="25"/>
+      </svg>
+    </div>
+    <div class="hud-float hud-float--5" data-speed="0.4">
+      <svg width="70" height="70" viewBox="0 0 70 70" fill="none" stroke="rgba(240,160,48,0.1)" stroke-width="1">
+        <path d="M5 5 L25 5 L25 15"/>
+        <path d="M65 5 L45 5 L45 15"/>
+        <path d="M5 65 L25 65 L25 55"/>
+        <path d="M65 65 L45 65 L45 55"/>
+      </svg>
+    </div>
+    <div class="hud-float hud-float--6" data-speed="0.35">
+      <svg width="40" height="90" viewBox="0 0 40 90" fill="none" stroke="rgba(0,229,255,0.12)" stroke-width="1">
+        <rect x="1" y="1" width="38" height="88" rx="2"/>
+        <rect x="8" y="10" width="24" height="4" rx="1" fill="rgba(0,229,255,0.08)" stroke="none"/>
+        <rect x="8" y="20" width="18" height="4" rx="1" fill="rgba(0,229,255,0.06)" stroke="none"/>
+        <rect x="8" y="30" width="24" height="4" rx="1" fill="rgba(0,229,255,0.1)" stroke="none"/>
+        <rect x="8" y="40" width="12" height="4" rx="1" fill="rgba(0,229,255,0.05)" stroke="none"/>
+        <rect x="8" y="50" width="20" height="4" rx="1" fill="rgba(0,229,255,0.07)" stroke="none"/>
+      </svg>
+    </div>
+
+    <div class="home__scroll">
       <span>Scroll</span>
-      <div class="hero__scroll-line"></div>
+      <div class="home__scroll-line"></div>
     </div>
   </section>
 
@@ -59,28 +151,84 @@
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
           <h3>Web Development</h3>
-          <p>Responsive websites and landing pages built with clean, semantic code. Fast, accessible, and SEO-friendly.</p>
+          <p>Zero-framework builds with dynamic theme systems, full internationalization, and pixel-perfect responsive design. Pure code, no bloat.</p>
         </div>
         <div class="service-card">
           <div class="service-card__icon">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
           </div>
           <h3>Web Applications</h3>
-          <p>Full-stack apps with modern frameworks. Dashboards, SaaS platforms, and internal tools tailored to your workflow.</p>
+          <p>Real-time availability engines, admin CMS panels, calendar & shift management — full platforms built from scratch, tailored to your workflow.</p>
         </div>
         <div class="service-card">
           <div class="service-card__icon">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
           </div>
           <h3>API & Integrations</h3>
-          <p>Connect your systems with custom APIs, third-party integrations, and automation that saves you hours every week.</p>
+          <p>Edge-deployed Cloudflare Workers, GitHub-as-database backends, and privacy-first analytics — custom APIs that scale without the overhead.</p>
         </div>
         <div class="service-card">
           <div class="service-card__icon">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
           </div>
           <h3>Maintenance & Support</h3>
-          <p>Ongoing updates, performance tuning, and technical support so your product stays fast, secure, and up to date.</p>
+          <p>Adaptive polling, service worker caching, and edge-deployed updates. Ongoing support so your product stays fast, secure, and always online.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3>Internationalization</h3>
+          <p>Multi-language support with automatic detection, localized date and currency formats, and session-persistent language overrides.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+          </div>
+          <h3>Theming & Design Systems</h3>
+          <p>Dynamic theme engines powered by CSS custom properties. Instant switching, smooth transitions, no page reloads.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3>Privacy-First Analytics</h3>
+          <p>Custom analytics with zero third-party trackers or cookies. Actionable data on page views, funnels, and engagement — no privacy debt.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3>Offline & Performance</h3>
+          <p>Service worker caching, adaptive polling, and edge deployment for instant load times. Your site works even when the network doesn't.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="12" y1="3" x2="12" y2="17"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Interactive UI Components</h3>
+          <p>Side-by-side comparison tools, multi-dimensional filtering, calendar heatmaps, and ambient sound systems — custom-built for your users.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Security & Compliance</h3>
+          <p>CSP headers, CORS policies, rate limiting, and input sanitization — all handled at the edge. Security baked in, not bolted on.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+          </div>
+          <h3>Content Management</h3>
+          <p>Custom admin panels and CMS dashboards backed by GitHub's API — versioned, auditable, and zero hosting cost. No WordPress needed.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+          </div>
+          <h3>And More</h3>
+          <p>Have something else in mind? We'll scope it, build it, and ship it. If it runs in a browser, we can make it happen.</p>
         </div>
       </div>
     </div>
@@ -123,37 +271,28 @@
   <!-- About -->
   <section class="about" id="about">
     <div class="container">
-      <div class="about__grid">
-        <div class="about__text">
-          <p class="section__tag">About Us</p>
-          <h2 class="section__title">Code with <span class="gradient-text">purpose</span></h2>
-          <p>Travanix Labs is a freelance development studio focused on building clean, performant digital products. We work closely with startups, agencies, and businesses to turn ideas into production-ready software.</p>
-          <p>No bloated frameworks. No unnecessary complexity. Just solid code that works — and ships on time.</p>
-          <div class="about__stats">
-            <div class="stat">
-              <span class="stat__number">50+</span>
-              <span class="stat__label">Projects Delivered</span>
-            </div>
-            <div class="stat">
-              <span class="stat__number">30+</span>
-              <span class="stat__label">Happy Clients</span>
-            </div>
-            <div class="stat">
-              <span class="stat__number">3+</span>
-              <span class="stat__label">Years Experience</span>
-            </div>
+      <h2 class="section__title" style="text-align:center;">Why <span class="gradient-text">us</span></h2>
+      <div class="about__pillars">
+        <div class="about__pillar">
+          <div class="about__pillar-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
+          <h3>Built on trust</h3>
+          <p>We partner with you to hit your business goals — no corporate walls, just honest collaboration and clear communication.</p>
         </div>
-        <div class="about__visual">
-          <div class="about__code-block">
-            <div class="code-dots"><span></span><span></span><span></span></div>
-            <pre><code><span class="code-kw">const</span> travanix = {
-  <span class="code-key">focus</span>: <span class="code-str">"clean code"</span>,
-  <span class="code-key">stack</span>: [<span class="code-str">"HTML"</span>, <span class="code-str">"CSS"</span>, <span class="code-str">"JS"</span>],
-  <span class="code-key">delivery</span>: <span class="code-str">"on time"</span>,
-  <span class="code-key">coffee</span>: <span class="code-num">Infinity</span>
-};</code></pre>
+        <div class="about__pillar">
+          <div class="about__pillar-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
           </div>
+          <h3>Designed for people</h3>
+          <p>Every decision starts with the end user. We design for real people, not personas on a slide deck.</p>
+        </div>
+        <div class="about__pillar">
+          <div class="about__pillar-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+          </div>
+          <h3>Deep craft</h3>
+          <p>Years deep in the craft of interface design and user experience — we know what works and why.</p>
         </div>
       </div>
     </div>
@@ -204,46 +343,17 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <a href="#" class="nav__logo">
-            <span class="nav__logo-icon">&#9671;</span> Travanix Labs
-          </a>
-          <p>Freelance software development studio. Building digital products that perform.</p>
-        </div>
-        <div class="footer__col">
-          <h4>Navigate</h4>
-          <ul>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="#services">Web Development</a></li>
-            <li><a href="#services">Web Applications</a></li>
-            <li><a href="#services">API & Integrations</a></li>
-            <li><a href="#services">Maintenance</a></li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h4>Connect</h4>
-          <ul>
-            <li><a href="mailto:info@travanixlabs.com">Email Us</a></li>
-            <li><a href="https://github.com/travanixlabs" target="_blank" rel="noopener">GitHub</a></li>
-            <li><a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a href="https://twitter.com/" target="_blank" rel="noopener">Twitter / X</a></li>
-          </ul>
-        </div>
-      </div>
       <div class="footer__bottom">
         <p>&copy; 2026 Travanix Labs. All rights reserved.</p>
       </div>
     </div>
   </footer>
+
+  <!-- Back to Top -->
+  <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+    <span class="back-to-top__text">Back to Top</span>
+  </a>
 
   <script src="js/main.js"></script>
 </body>

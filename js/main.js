@@ -138,7 +138,7 @@
   const sections = document.querySelectorAll('.services, .work, .about, .contact');
   if (!sections.length) return;
 
-  // Create a single background canvas that covers the whole page below the hero
+  // Create a single background canvas that covers the whole page below the home section
   const bgCanvas = document.createElement('canvas');
   bgCanvas.style.cssText =
     'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.08;';
@@ -187,9 +187,9 @@
   drawHexGrid();
 })();
 
-// --- Glitch Text Effect on Hero Title ---
+// --- Glitch Text Effect on Home Title ---
 (function () {
-  const title = document.querySelector('.hero__title');
+  const title = document.querySelector('.home__title');
   if (!title) return;
 
   // Add glitch-active class briefly on load for CSS-driven distortion
@@ -201,17 +201,17 @@
 
 // --- Scan Line Animation ---
 (function () {
-  const hero = document.getElementById('hero');
-  if (!hero) return;
+  const home= document.getElementById('home');
+  if (!home) return;
 
   const scanline = document.createElement('div');
-  scanline.className = 'hero__scanline';
-  hero.appendChild(scanline);
+  scanline.className = 'home__scanline';
+  home.appendChild(scanline);
 
   // Inject scanline CSS
   const style = document.createElement('style');
   style.textContent = `
-    .hero__scanline {
+    .home__scanline {
       position: absolute;
       left: 0;
       top: 0;
@@ -244,17 +244,17 @@
   document.head.appendChild(style);
 })();
 
-// --- Parallax-Lite on Hero Content ---
+// --- Parallax-Lite on Home Content ---
 (function () {
-  const heroContent = document.querySelector('.hero__content');
-  const hero = document.getElementById('hero');
-  if (!heroContent || !hero) return;
+  const homeContent = document.querySelector('.home__content');
+  const home= document.getElementById('home');
+  if (!homeContent || !home) return;
 
   let targetX = 0, targetY = 0, currentX = 0, currentY = 0;
   const maxShift = 8; // px
 
-  hero.addEventListener('mousemove', (e) => {
-    const rect = hero.getBoundingClientRect();
+  home.addEventListener('mousemove', (e) => {
+    const rect = home.getBoundingClientRect();
     const cx = rect.width / 2;
     const cy = rect.height / 2;
     const mx = e.clientX - rect.left;
@@ -263,7 +263,7 @@
     targetY = ((my - cy) / cy) * maxShift;
   });
 
-  hero.addEventListener('mouseleave', () => {
+  home.addEventListener('mouseleave', () => {
     targetX = 0;
     targetY = 0;
   });
@@ -271,39 +271,98 @@
   function animate() {
     currentX += (targetX - currentX) * 0.08;
     currentY += (targetY - currentY) * 0.08;
-    heroContent.style.transform = `translate(${currentX.toFixed(2)}px, ${currentY.toFixed(2)}px)`;
+    homeContent.style.transform = `translate(${currentX.toFixed(2)}px, ${currentY.toFixed(2)}px)`;
     requestAnimationFrame(animate);
   }
 
   animate();
 })();
 
-// --- Nav scroll effect ---
+// --- Floating HUD Parallax ---
 (function () {
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      nav.classList.add('nav--scrolled');
-    } else {
-      nav.classList.remove('nav--scrolled');
-    }
+  const home = document.getElementById('home');
+  const floats = document.querySelectorAll('.hud-float');
+  if (!home || !floats.length) return;
+
+  const state = Array.from(floats).map((el) => ({
+    el,
+    speed: parseFloat(el.dataset.speed) || 0.3,
+    cx: 0,
+    cy: 0,
+    tx: 0,
+    ty: 0,
+  }));
+
+  home.addEventListener('mousemove', (e) => {
+    const rect = home.getBoundingClientRect();
+    const mx = (e.clientX - rect.left) / rect.width - 0.5;
+    const my = (e.clientY - rect.top) / rect.height - 0.5;
+    state.forEach((s) => {
+      s.tx = mx * s.speed * 60;
+      s.ty = my * s.speed * 60;
+    });
   });
+
+  home.addEventListener('mouseleave', () => {
+    state.forEach((s) => { s.tx = 0; s.ty = 0; });
+  });
+
+  function animate() {
+    state.forEach((s) => {
+      s.cx += (s.tx - s.cx) * 0.06;
+      s.cy += (s.ty - s.cy) * 0.06;
+      s.el.style.transform = `translate(${s.cx.toFixed(1)}px, ${s.cy.toFixed(1)}px)`;
+    });
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+})();
+
+// --- Sidebar active link tracking ---
+(function () {
+  const sidebarLinks = document.querySelectorAll('.sidebar__link[href^="#"]');
+  const sections = [];
+
+  sidebarLinks.forEach((link) => {
+    const id = link.getAttribute('href').substring(1);
+    const section = document.getElementById(id);
+    if (section) sections.push({ el: section, link: link });
+  });
+
+  function updateActive() {
+    const scrollY = window.scrollY + window.innerHeight / 3;
+    let current = sections[0];
+
+    for (const s of sections) {
+      if (scrollY >= s.el.offsetTop) {
+        current = s;
+      }
+    }
+
+    sidebarLinks.forEach((l) => l.classList.remove('sidebar__link--active'));
+    if (current) current.link.classList.add('sidebar__link--active');
+  }
+
+  window.addEventListener('scroll', updateActive);
+  updateActive();
 })();
 
 // --- Mobile nav toggle ---
 (function () {
   const toggle = document.getElementById('navToggle');
-  const links = document.getElementById('navLinks');
+  const menu = document.getElementById('mobileMenu');
+  if (!toggle || !menu) return;
 
   toggle.addEventListener('click', () => {
     toggle.classList.toggle('nav__toggle--active');
-    links.classList.toggle('nav__links--open');
+    menu.classList.toggle('mobile-menu--open');
   });
 
-  links.querySelectorAll('a').forEach((link) => {
+  menu.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
       toggle.classList.remove('nav__toggle--active');
-      links.classList.remove('nav__links--open');
+      menu.classList.remove('mobile-menu--open');
     });
   });
 })();
@@ -311,7 +370,7 @@
 // --- Scroll reveal with staggered children ---
 (function () {
   const revealElements = document.querySelectorAll(
-    '.service-card, .work-card, .about__text, .about__visual, .contact__info, .contact__form'
+    '.service-card, .work-card, .about__pillar, .contact__info, .contact__form'
   );
 
   revealElements.forEach((el) => el.classList.add('reveal'));
@@ -406,6 +465,20 @@
   if (aboutStats) {
     observer.observe(aboutStats);
   }
+})();
+
+// --- Back to Top button ---
+(function () {
+  const btn = document.getElementById('backToTop');
+  if (!btn) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > window.innerHeight * 0.5) {
+      btn.classList.add('back-to-top--visible');
+    } else {
+      btn.classList.remove('back-to-top--visible');
+    }
+  });
 })();
 
 // --- Contact form ---
