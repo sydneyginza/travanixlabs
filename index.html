@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travanix Labs — Freelance Software Development</title>
+  <meta name="description" content="Travanix Labs builds custom websites, web apps, and digital solutions for businesses. Clean code, modern design, delivered on time.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="#" class="nav__logo">
+        <span class="nav__logo-icon">&#9671;</span> Travanix Labs
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact" class="nav__cta">Get in Touch</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <canvas id="particleCanvas"></canvas>
+    <div class="hero__content">
+      <p class="hero__tag">Freelance Software Development</p>
+      <h1 class="hero__title">We build digital<br>products that <span class="gradient-text">perform</span>.</h1>
+      <p class="hero__subtitle">Clean code. Modern design. Shipped on time.</p>
+      <div class="hero__actions">
+        <a href="#contact" class="btn btn--primary">Start a Project</a>
+        <a href="#work" class="btn btn--outline">View Our Work</a>
+      </div>
+    </div>
+    <div class="hero__scroll">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <div class="container">
+      <p class="section__tag">What We Do</p>
+      <h2 class="section__title">Services built around <span class="gradient-text">your goals</span></h2>
+      <div class="services__grid">
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Web Development</h3>
+          <p>Responsive websites and landing pages built with clean, semantic code. Fast, accessible, and SEO-friendly.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Web Applications</h3>
+          <p>Full-stack apps with modern frameworks. Dashboards, SaaS platforms, and internal tools tailored to your workflow.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+          </div>
+          <h3>API & Integrations</h3>
+          <p>Connect your systems with custom APIs, third-party integrations, and automation that saves you hours every week.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </div>
+          <h3>Maintenance & Support</h3>
+          <p>Ongoing updates, performance tuning, and technical support so your product stays fast, secure, and up to date.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work / Portfolio -->
+  <section class="work" id="work">
+    <div class="container">
+      <p class="section__tag">Selected Work</p>
+      <h2 class="section__title">Projects we're <span class="gradient-text">proud of</span></h2>
+      <div class="work__grid">
+        <a href="#" class="work-card work-card--wide">
+          <div class="work-card__overlay">
+            <span class="work-card__category">Web Application</span>
+            <h3 class="work-card__title">E-Commerce Dashboard</h3>
+            <p class="work-card__desc">Real-time analytics platform for an online retailer. Built with vanilla JS and REST APIs.</p>
+            <span class="work-card__link">View Case Study &rarr;</span>
+          </div>
+        </a>
+        <a href="#" class="work-card">
+          <div class="work-card__overlay">
+            <span class="work-card__category">Website</span>
+            <h3 class="work-card__title">Brand Refresh</h3>
+            <p class="work-card__desc">Complete redesign for a creative agency. Mobile-first, blazing fast.</p>
+            <span class="work-card__link">View Case Study &rarr;</span>
+          </div>
+        </a>
+        <a href="#" class="work-card">
+          <div class="work-card__overlay">
+            <span class="work-card__category">API Integration</span>
+            <h3 class="work-card__title">Payment Gateway</h3>
+            <p class="work-card__desc">Custom Stripe integration with automated invoicing and reconciliation.</p>
+            <span class="work-card__link">View Case Study &rarr;</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about__grid">
+        <div class="about__text">
+          <p class="section__tag">About Us</p>
+          <h2 class="section__title">Code with <span class="gradient-text">purpose</span></h2>
+          <p>Travanix Labs is a freelance development studio focused on building clean, performant digital products. We work closely with startups, agencies, and businesses to turn ideas into production-ready software.</p>
+          <p>No bloated frameworks. No unnecessary complexity. Just solid code that works — and ships on time.</p>
+          <div class="about__stats">
+            <div class="stat">
+              <span class="stat__number">50+</span>
+              <span class="stat__label">Projects Delivered</span>
+            </div>
+            <div class="stat">
+              <span class="stat__number">30+</span>
+              <span class="stat__label">Happy Clients</span>
+            </div>
+            <div class="stat">
+              <span class="stat__number">3+</span>
+              <span class="stat__label">Years Experience</span>
+            </div>
+          </div>
+        </div>
+        <div class="about__visual">
+          <div class="about__code-block">
+            <div class="code-dots"><span></span><span></span><span></span></div>
+            <pre><code><span class="code-kw">const</span> travanix = {
+  <span class="code-key">focus</span>: <span class="code-str">"clean code"</span>,
+  <span class="code-key">stack</span>: [<span class="code-str">"HTML"</span>, <span class="code-str">"CSS"</span>, <span class="code-str">"JS"</span>],
+  <span class="code-key">delivery</span>: <span class="code-str">"on time"</span>,
+  <span class="code-key">coffee</span>: <span class="code-num">Infinity</span>
+};</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact__grid">
+        <div class="contact__info">
+          <p class="section__tag">Get in Touch</p>
+          <h2 class="section__title">Let's build something <span class="gradient-text">great</span></h2>
+          <p>Have a project in mind? Drop us a message and we'll get back to you within 24 hours.</p>
+          <div class="contact__details">
+            <a href="mailto:info@travanixlabs.com" class="contact__detail">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+              info@travanixlabs.com
+            </a>
+          </div>
+        </div>
+        <form class="contact__form" id="contactForm">
+          <div class="form__group">
+            <input type="text" name="name" placeholder="Your Name" required>
+          </div>
+          <div class="form__group">
+            <input type="email" name="email" placeholder="Your Email" required>
+          </div>
+          <div class="form__group">
+            <select name="service" required>
+              <option value="" disabled selected>What do you need?</option>
+              <option value="website">Website</option>
+              <option value="webapp">Web Application</option>
+              <option value="api">API / Integration</option>
+              <option value="maintenance">Maintenance & Support</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form__group">
+            <textarea name="message" rows="4" placeholder="Tell us about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Send Message</button>
+          <p class="form__status" id="formStatus"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="#" class="nav__logo">
+            <span class="nav__logo-icon">&#9671;</span> Travanix Labs
+          </a>
+          <p>Freelance software development studio. Building digital products that perform.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Web Development</a></li>
+            <li><a href="#services">Web Applications</a></li>
+            <li><a href="#services">API & Integrations</a></li>
+            <li><a href="#services">Maintenance</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:info@travanixlabs.com">Email Us</a></li>
+            <li><a href="https://github.com/travanixlabs" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://twitter.com/" target="_blank" rel="noopener">Twitter / X</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Travanix Labs. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
