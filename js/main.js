@@ -331,12 +331,17 @@
   });
 
   function updateActive() {
-    const scrollY = window.scrollY + window.innerHeight / 3;
     let current = sections[0];
 
-    for (const s of sections) {
-      if (scrollY >= s.el.offsetTop) {
-        current = s;
+    // If scrolled to bottom, activate last section
+    if (window.innerHeight + Math.round(window.scrollY) >= document.documentElement.scrollHeight - 2) {
+      current = sections[sections.length - 1];
+    } else {
+      const scrollY = window.scrollY + window.innerHeight / 3;
+      for (const s of sections) {
+        if (scrollY >= s.el.offsetTop) {
+          current = s;
+        }
       }
     }
 
