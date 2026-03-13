@@ -467,6 +467,22 @@
   }
 })();
 
+// --- Iframe preview scaling ---
+(function () {
+  const wrap = document.querySelector('.work-card__iframe-wrap');
+  if (!wrap) return;
+  const iframe = wrap.querySelector('iframe');
+  const iframeW = 1440;
+
+  function scale() {
+    const cardW = wrap.offsetWidth;
+    iframe.style.transform = 'scale(' + (cardW / iframeW) + ')';
+  }
+
+  scale();
+  window.addEventListener('resize', scale);
+})();
+
 // --- Back to Top button ---
 (function () {
   const btn = document.getElementById('backToTop');
